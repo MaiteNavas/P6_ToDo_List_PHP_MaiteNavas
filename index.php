@@ -1,7 +1,8 @@
 <?php
+//use Controller\TaskController;
+
     require_once("./view/head/head.php");
     require_once("./controller/TaskController.php");  
-
     $obj = new TaskController();
     $rows = $obj->index();
 ?>
@@ -17,7 +18,7 @@
            
         </tr>
         <tr>
-            <th scope="col">ID</th>
+            
             <th scope="col">TAREA</th>
             <th scope="col">DESCRIPCIÓN</th>
             <th scope="col">FECHA DE CREACIÓN</th>
@@ -29,7 +30,7 @@
         <?php if($rows): ?>
             <?php foreach($rows as $row): ?>
                 <tr>
-                    <th><?=$row["id"] ?></th>
+                    
                     <th><?=$row["title"] ?></th>
                     <th><?=$row["description"] ?></th>
                     <th><?=$row["date_create"] ?></th>
