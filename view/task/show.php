@@ -1,7 +1,8 @@
 <?php
+
     require_once("../head/head.php");
-    require_once("../../controller/taskController.php");
-    $obj = new taskController();
+    require_once("../../controller/TaskController.php");
+    $obj = new TaskController;
     $date = $obj->show($_GET['id']);
     //print_r($date);
 

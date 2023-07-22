@@ -2,7 +2,7 @@
 require_once("../head/head.php");
 
 ?>
-    <form action="./store.php" method="POST" autocomplete="off">
+    <form action="store.php" method="POST" autocomplete="off">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Nueva tarea</label>
         <input type="text" name="title" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

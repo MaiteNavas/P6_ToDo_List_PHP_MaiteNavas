@@ -1,0 +1,11 @@
+{
+    "name": "maitenavas/p6_to-do_list_php_maite-navas",
+    "autoload": {
+        "psr-4": {
+            "Database\\":"database/",
+            "Model\\":"model/",
+            "Controller\\":"controller/"
+        }
+    },
+    "require": {}
+}

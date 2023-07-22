@@ -24,7 +24,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/Fem-Coders/P6_ToDo_List_PHP_MaiteNavas/view/task/index.php">Tareas</a></li>
-                            <li><a class="dropdown-item" href="/Fem-Coders/P6_ToDo_List_PHP_MaiteNavas/create.php">Agregar nueva tarea</a></li>
+                            <li><a class="dropdown-item" href="/Fem-Coders/P6_ToDo_List_PHP_MaiteNavas/view/task/create.php">Agregar nueva tarea</a></li>
                         </ul>
                     </li>
                 </ul>
