@@ -8,7 +8,7 @@ Mostrar Tareas
 ![Show Task Preview](./src/img/ShowTask.png)
 
 Editar Tarea
-![Edit Preview](./src/img/EditTask.png)
+![Edit Preview](./src/img/EditTask2.png)
 
 ## Características
 
