@@ -6,11 +6,12 @@ class TaskModel{
         $conn = new DatabaseConnection();
         $this->PDO = $conn->connection();
     }
-    public function insertar($title,$description, $date_create){
-        $stament = $this->PDO->prepare("INSERT INTO tasks(title, description, date_create) VALUES(:title,:description, :date_create)");
+    public function insertar($title,$description, $date_create, $status){
+        $stament = $this->PDO->prepare("INSERT INTO tasks(title, description, date_create, status) VALUES(:title, :description, :date_create, :status)");
         $stament->bindParam(":title",$title);
         $stament->bindParam(":description",$description);
         $stament->bindParam(":date_create",$date_create);
+        $stament->bindParam(":status",$status);
         return($stament->execute()) ? $this->PDO->lastInsertId() : false;
 
     }
@@ -23,12 +24,12 @@ class TaskModel{
         $stament = $this->PDO->prepare("SELECT * FROM tasks");
         return ($stament->execute()) ? $stament->fetchAll() : false;
     }
-    public function update($id,$title,$description){
-        $stament = $this->PDO->prepare("UPDATE tasks SET title = :title, description = :description WHERE id = :id");
-       
+    public function update($id,$title,$description,$status){
+        $stament = $this->PDO->prepare("UPDATE tasks SET title = :title, description = :description, status = :status WHERE id = :id");
         $stament->bindParam(":id",$id);
         $stament->bindParam(":title",$title);
         $stament->bindParam(":description",$description);
+        $stament->bindParam(":status",$status);
         return ($stament->execute()) ? $id : false;
     }
     public function delete($id){

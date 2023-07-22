@@ -37,10 +37,14 @@
   <div class="mb-3 row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Estado</label>
     <div class="col-sm-10">
-      <input type="checkbox" name="state" class="form-control-plaintext" id="staticEmail" value="In progress">
-      
+        <select id="status" name="status"class="form-control-plaintext" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <option value="Sin empezar">Sin empezar</option>
+            <option value="En progreso">En progreso</option>
+            <option value="Terminada">Terminada</option>
+        </select>
     </div>
   </div>
+  
     <input type="submit" value="Actualizar" class="btn btn-success">
     <a href="show.php?id=<?= $task["id"]?>" class="btn btn-danger">Cancelar</a>
   </div>

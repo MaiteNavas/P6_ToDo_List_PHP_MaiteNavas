@@ -9,7 +9,7 @@
 ?>
 <h2 class="text-center">DETALLES DEL REGISTRO</h2>
 <div class="pb-3">
-    <a href="index.php" class="btn btn-primary">Regresar</a>
+    <a href="../../index.php" class="btn btn-primary">Regresar</a>
     <a href="edit.php?id=<?= $date["id"]?>" class="btn btn-success">Editar</a>
     <!-- Button trigger modal -->
     <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</a>
@@ -40,6 +40,7 @@
             <th scope="col">TAREA</th>
             <th scope="col">DESCRIPCIÓN</th>
             <th scope="col">FECHA DE CREACIÓN</th>
+            <th scope="col">ESTADO</th>
         </tr>
     </thead>
     <tbody>
@@ -48,6 +49,7 @@
             <td scope="col"><?= $date["title"] ?></td>
             <td scope="col"><?= $date["description"] ?></td>
             <td scope="col"><?= $date["date_create"] ?></td>
+            <td scope="col"><?= $date["status"] ?></td>
         </tr>
     </tbody>
 </table>
