@@ -1,12 +1,12 @@
 <?php
-    //use Controller\TaskController;
+    use Controller\TaskController;
+    require __DIR__ . '/../../vendor/autoload.php';
     require_once("../head/head.php");
-    require_once("../../controller/TaskController.php");
+    //require_once("../../controller/TaskController.php");
     $obj = new TaskController();
     $date = $obj->show($_GET['id']);
-    //print_r($date);
-
 ?>
+
 <h2 class="text-center">DETALLES DEL REGISTRO</h2>
 <div class="pb-3">
     <a href="../../index.php" class="btn btn-primary">Lista de tareas</a>
@@ -27,7 +27,6 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
                     <a href="delete.php?id=<?= $date["id"]?>" class="btn btn-danger">Eliminar</a>
-                    
                 </div>
             </div>
         </div>
@@ -36,7 +35,6 @@
 <table class="table container-fluid">
     <thead>
         <tr>
-            
             <th scope="col">TAREA</th>
             <th scope="col">DESCRIPCIÓN</th>
             <th scope="col">FECHA DE CREACIÓN</th>
@@ -45,7 +43,6 @@
     </thead>
     <tbody>
         <tr>
-            
             <td scope="col"><?= $date["title"] ?></td>
             <td scope="col"><?= $date["description"] ?></td>
             <td scope="col"><?= $date["date_create"] ?></td>

@@ -1,7 +1,8 @@
 <?php
-    //use Controller\TaskController;
+    use Controller\TaskController;
+    require __DIR__ . '/../../vendor/autoload.php';
     require_once("../head/head.php");
-    require_once("../../controller/TaskController.php");
+    //require_once("../../controller/TaskController.php");
 
     $obj = new TaskController();
     $task = $obj->show($_GET['id']);

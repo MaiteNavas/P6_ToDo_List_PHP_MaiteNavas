@@ -1,7 +1,7 @@
 <?php
-//namespace Model;
-//use Database\DatabaseConnection;
-require_once __DIR__ . ("/../database/DatabaseConnection.php");
+namespace Model;
+use Database\DatabaseConnection;
+//require_once __DIR__ . ("/../database/DatabaseConnection.php");
 class TaskModel{
         private $PDO;
         public function __construct(){

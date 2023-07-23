@@ -1,22 +1,19 @@
 <?php
-//use Controller\TaskController;
-
+    use Controller\TaskController;
     require_once("./view/head/head.php");
-    require_once("./controller/TaskController.php");  
+    require __DIR__ . '/vendor/autoload.php';
+    //require_once("./controller/TaskController.php"); 
     $obj = new TaskController();
     $rows = $obj->index();
     function compareByTitle($a, $b) {
         return strcmp($a["title"], $b["title"]);
     }
-    
     function compareByDescription($a, $b) {
         return strcmp($a["description"], $b["description"]);
     }
-    
     function compareByDateCreate($a, $b) {
         return strcmp($a["date_create"], $b["date_create"]);
     }
-    
     function compareByStatus($a, $b) {
         return strcmp($a["status"], $b["status"]);
     }
@@ -38,7 +35,6 @@
             // Si el parámetro de orden no coincide con ninguna columna, ordenar por defecto por la columna "titulo"
             usort($rows, 'compareByTitle');
     }
-
 ?>
 <div class="mb-3">
     <a href="./view/task/create.php" class="btn btn-primary">Agregar nueva tarea</a>
@@ -69,7 +65,6 @@
         <?php if($rows): ?>
             <?php foreach($rows as $row): ?>
                 <tr>
-                    
                     <th><?=$row["title"] ?></th>
                     <th><?=$row["description"] ?></th>
                     <th><?=$row["date_create"] ?></th>
@@ -92,8 +87,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
-                                        <a href="./view/task/delete.php?id=<?= $row["id"]?>" class="btn btn-danger">Eliminar</a>
-                                        
+                                        <a href="./view/task/delete.php?id=<?= $row["id"]?>" class="btn btn-danger">Eliminar</a>  
                                     </div>
                                 </div>
                             </div>
@@ -107,9 +101,7 @@
             </tr>
         <?php endif; ?>
     </tbody>
-
 </table>
-
 <?php
     require_once("./view/head/footer.php");
 ?>

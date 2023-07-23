@@ -1,6 +1,5 @@
 <?php 
 require_once("../head/head.php");
-
 ?>
     <form action="./store.php" method="POST" autocomplete="off">
     <div class="mb-3">
@@ -19,7 +18,7 @@ require_once("../head/head.php");
         <br><br>
         
     <button type="submit" class="btn btn-primary">Guardar</button>
-    <a class="btn btn-danger" href="index.php">Cancelar</a>
+    <a class="btn btn-danger" href="../../index.php">Cancelar</a>
     </form>
 
 <?php 

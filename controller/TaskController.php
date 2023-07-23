@@ -1,12 +1,11 @@
 <?php
-//namespace Controller;
-//use Model\TaskModel;
+namespace Controller;
+use Model\TaskModel;
 
 class TaskController{
     private $model;
     public function __construct(){
-        require_once __DIR__ .("./../model/TaskModel.php");
-        
+        //require_once __DIR__ .("./../model/TaskModel.php");
         $this->model = new TaskModel();
     }
     public function store($title, $description, $date_create, $status){
