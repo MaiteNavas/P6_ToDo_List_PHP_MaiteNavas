@@ -5,36 +5,7 @@
     //require_once("./controller/TaskController.php"); 
     $obj = new TaskController();
     $rows = $obj->index();
-    function compareByTitle($a, $b) {
-        return strcmp($a["title"], $b["title"]);
-    }
-    function compareByDescription($a, $b) {
-        return strcmp($a["description"], $b["description"]);
-    }
-    function compareByDateCreate($a, $b) {
-        return strcmp($a["date_create"], $b["date_create"]);
-    }
-    function compareByStatus($a, $b) {
-        return strcmp($a["status"], $b["status"]);
-    }
-    $orderBy = isset($_GET['order']) ? $_GET['order'] : 'id';
-    switch ($orderBy) {
-        case 'title':
-            usort($rows, 'compareByTitle');
-            break;
-        case 'description':
-            usort($rows, 'compareByDescription');
-            break;
-        case 'date_create':
-            usort($rows, 'compareByDateCreate');
-            break;
-        case 'status':
-            usort($rows, 'compareByStatus');
-            break;
-        default:
-            // Si el parámetro de orden no coincide con ninguna columna, ordenar por defecto por la columna "titulo"
-            usort($rows, 'compareByTitle');
-    }
+ 
 ?>
 <div class="mb-3">
     <a href="./view/task/create.php" class="btn btn-primary">Agregar nueva tarea</a>
@@ -46,18 +17,10 @@
             <th colspan="6" class="text-center"><b>LISTA DE TAREAS</b></th>
         </tr>
         <tr>
-            <th scope="col" >
-                <a href="?order=title" class="btn">TAREA</a>
-            </th>
-            <th scope="col">
-                <a href="?order=description" class="btn">DESCRIPCIÓN</a>
-            </th>
-            <th scope="col">
-                <a href="?order=date_create" class="btn">FECHA DE CREACIÓN</a>
-            </th>
-            <th scope="col">
-                <a href="?order=status" class="btn">ESTADO</a>
-            </th>
+            <th scope="col">TAREA</th>
+            <th scope="col">DESCRIPCIÓN</th>
+            <th scope="col">FECHA DE CREACIÓN</th>
+            <th scope="col">ESTADO</th>
             <th scope="col">ACCIONES</th>
         </tr>
     </thead>
