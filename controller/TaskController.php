@@ -9,8 +9,8 @@ class TaskController{
         
         $this->model = new TaskModel();
     }
-    public function guardar($title, $description, $date_create, $status){
-        $id = $this->model->insertar($title, $description, $date_create, $status);
+    public function store($title, $description, $date_create, $status){
+        $id = $this->model->insert($title, $description, $date_create, $status);
         return($id != false) ? header("Location:show.php?id=".$id) : header("Location:create.php");
     }
     public function show($id){

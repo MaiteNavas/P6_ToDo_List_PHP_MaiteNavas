@@ -9,7 +9,7 @@ class TaskModel{
             $conn = new DatabaseConnection();
             $this->PDO = $conn->connection();
         }
-        public function insertar($title,$description, $date_create, $status){
+        public function insert($title,$description, $date_create, $status){
             $stament = $this->PDO->prepare("INSERT INTO tasks(title, description, date_create, status) VALUES(:title, :description, :date_create, :status)");
             $stament->bindParam(":title",$title);
             $stament->bindParam(":description",$description);
